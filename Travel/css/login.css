@@ -1,0 +1,108 @@
+body{
+	overflow: scroll;
+	min-width: 75em;
+	margin: 0;
+}
+header{
+	height: 5em;
+	background: #008080;
+	color: white;
+	margin: 0;
+}
+#div_logo{
+	width: 50%;
+	padding-top: 0;
+	padding-bottom: 0;
+	float: left;
+	display: inline-block;
+
+}
+#div_logo1{
+	font-size: 10px;
+	padding-left: 25%;
+}
+#div_user_pass{
+	display: inline-block;
+	width: 50%;
+	min-width : 15em ;
+
+}
+.div_login{
+	padding-top: 2%;
+	display: inline-block;
+	padding-left: 1%;
+}
+#button_login{
+	width: 5em;
+	height: 1.7em;
+	margin-bottom: 4%;
+	padding: 0 0 2% 0;
+}
+#div1{
+	display: inline-block;
+	margin: 2%;
+	width: 46%;
+	float: left;
+}
+#div2{
+	margin: 2% 2% 2% 1% ;
+	width: 46%;
+	float: left;
+}
+#div3{
+	width: 85% ;
+}
+.class_border_radius_5px{
+	display: inline-block;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #808080;
+	border-width: 1px;
+	margin-top: 0.7em;
+}
+#button_dangKy{
+	display: inline-block;
+	background-color: #609d53;
+	color: white;
+	width: 10em;
+	border-radius: 5px;
+	border-style: solid;
+	padding: 5px;
+	font-size: 20px;
+	border-color: #609d53;
+}
+#div6{
+	min-width: 980px;
+}
+.msg-error {
+	text-align: center;
+	position: fixed;
+	top: 4.5em;
+    right: 22.7%;
+    width: 361px;
+    height: 30px;
+    background-color: white;
+    color: red;
+    font-weight: bolder;
+    z-index: 10;		   
+    border-radius: 4px;
+    border-color: red;
+    border-width: 1px;
+	border-style: solid;
+}
+.msg-error1 {
+	text-align: center;
+	position: fixed;
+	top: 4.5em;
+    right: 22.7%;
+    width: 361px;
+    height: 30px;
+    background-color: white;
+    color: #009900;
+    font-weight: bolder;
+    z-index: 10;		   
+    border-radius: 4px;
+    border-color: #009900;
+    border-width: 1px;
+	border-style: solid;
+}

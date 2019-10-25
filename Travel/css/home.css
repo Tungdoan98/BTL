@@ -1,0 +1,189 @@
+body{
+	background-color: #E9EBEE;
+	overflow: scroll;
+	min-width: 75em;
+	margin: 0;
+	width:100%;
+	min-height: 50em;
+}
+header{
+	position: fixed;
+	width: 100%;
+	height: 4em;
+	background: #008080;
+	color: white;
+	margin: 0;
+}
+#div_header{
+	height: 4em;
+	min-width: 980px;
+}
+#div1{
+	float: left;
+	margin: 0;
+	width: 55%;
+	height: 4em;
+	
+}
+#div_search{
+	padding-top: 1em;
+	margin-left: 6em;
+	
+	
+}
+#div_list{
+	min-width: 390px;
+}
+#div_header{
+	min-width: 995px;
+}
+#btn_search{
+	padding: 0;
+    height: 1.75em;
+	margin-bottom: 0.2em;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+	width: 4em;
+}
+#div2{
+	width: 330px!important;
+	min-width: 330px;
+	float: left;
+	height: 4em;
+	margin: 0;
+}
+ul {
+ 	list-style-type: none;
+    margin: 0;
+    margin-bottom: 0;
+    padding-top: 0.5em;
+    overflow: hidden;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 0!important;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 44px;
+    text-decoration: none;
+}
+
+li a:hover {
+	text-decoration: none;
+    background-color: #E9EBEE;
+}
+#div3{
+	position: fixed;
+	margin-left: 0.2em;
+	border-radius: 10px;
+	background-color: #DDDDDD;
+	min-width: 270px;
+	min-height: 50em;
+	width: 270px;
+}
+.div_chucnang{
+	margin-left: 12%;
+	margin-top: 5%;
+	width: 200px;
+}
+#div4{
+	display: inline-block;
+	margin-right: 0.2em;
+	float: right;
+	border-radius: 10px;
+	background-color: #E9EBEE;
+	width: 59%;
+	min-height: 50em;
+}
+#div5{
+	margin-right: 0.2em;
+	display: inline-block;
+	float: right;
+	border-radius: 10px;
+	background-color: #FFFFCC;
+	width: 20%;
+	min-height: 50em;
+	text-align: center;
+}
+.class_image{
+	width: 200px;
+	height: 100px;
+	margin:10px 10px 0px 10px;
+}
+.class_khung_image{
+	border-style: solid;
+	border-style: black;
+	border-radius: 5px;
+	margin: 10px;
+}
+#div_avata_trangthai{
+	border-radius:50%;
+	border-style: solid;
+	border-color: white;
+	width: 3em;
+	height: 3em;
+}
+#div_trangthai{
+	box-sizing: border-box;
+	border-width: 1px;
+	border-radius: 5px;
+	width: 90%;
+	min-width: 700px;
+	height: 13em;
+	float: left;
+	margin-top: 5%;
+	margin-left: 5%; 
+	border-style:solid;
+	border-color: #EEEEEE; 
+	background-color: #DDDDDD
+}
+#div_trangthai_avt{
+	float: left;
+	margin-top: 2em;
+	margin-left:2em;
+}
+#div_trangthai_note{
+	float: left;
+	margin: 1em;
+}
+.div_trangthai_upload{
+	margin-left: 2.5%;
+	box-sizing: border-box;
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #DDDDDD;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+}
+.div_trangthai_upload:hover{
+	border-color: #0099FF;
+	background-color:#EEEEEE;
+}
+#div_top{
+	padding-left: 2%;
+	width: 90%;
+    min-width: 700px;
+	font-size: 13px;
+	background-color: #DDDDDD;
+	margin-bottom: 1em;
+}
+#btn_dang{
+	margin-left: 0.8em;
+	padding: 0;
+    width: 16em;
+}
+
+
