@@ -1,8 +1,10 @@
 <?php
-	require_once '../lib/db.php';
-
-	function addCat($conn, $hoten, $email, $password, $ngaysinh, $gioitinh) {
-	return db_query($conn, 
-		" INSERT INTO `dangky` (`id`, `Hoten`, `email`, `password`, `ngaysinh`, `gioitinh`) VALUES (NULL, '$hoten', '$email', '$password', '$ngaysinh', '$gioitinh')";
+	require_once '../lib/connectdb.php';
+	function getImageAvatar() {
+		$conn = db_connect();
+		$email = $_SESSION['name'][0];
+		$str = "SELECT * FROM trangcanhan WHERE email ='".$email."' ";
+		$row = db_single($conn, $str);
+		return $row["avatar"];
 	}
 ?>

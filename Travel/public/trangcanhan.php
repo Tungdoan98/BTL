@@ -15,6 +15,10 @@
 	
 </head>
 <body>
+	<?php 
+	require '../lib/service.php';
+	$img = getImageAvatar();
+	?>
 	<header>
 		<div id="div_header">
 			<div id="div1">
@@ -26,9 +30,9 @@
 			<div id="div2">
 				<div id="div_list">
 					<ul>
-						<li><a href="..\public\trangcanhan.html"><img src="..\public\upload\avatar.png" style="border-radius: 50%;width: 44px;height: 44px;"> 
+						<li><a href="..\public\trangcanhan.html"><img src="..\public\upload\<?=$img ?>" style="border-radius: 50%;width: 44px;height: 44px;"> 
 							<?php
-								$str = $_SESSION['name'];
+								$str = $_SESSION['name'][1];
 								$arr = explode(" ",$str );
 								echo($arr[count($arr)-1]);
 							?>
@@ -42,11 +46,11 @@
 			<div id="div_dropdown" class="dropdown">
                 <i onclick="myFunction()" id="menu1" class="fa fa-reorder dropbtn"></i> 
 				<div id="myDropdown" class="dropdown-content">
-					<a href="..\public\trangcanhan.html"><img src="..\public\upload\avatar.png" 
+					<a href="..\public\trangcanhan.html"><img src="..\public\upload\<?=$img ?>"
 						style="border-radius: 50%;width: 35px;height: 35px;">
 						<strong style="margin-left: 1em">
 							<?php 
-								echo $_SESSION['name'];
+								echo $_SESSION['name'][1];
 							?>
 						</strong>
 					</a>
@@ -106,14 +110,15 @@
 					</div>
 					<div id="div_anh_dai_dien">
 						<div style="float: left;margin-left: 1em;">
-							<img style="border-radius:50%;border-style: solid;border-color: white;width: 8em;height: 8em;" src="..\public\upload\avatar.png">
+							<img style="border-radius:50%;border-style: solid;border-color: white;width: 8em;height: 8em;" 
+							src="..\public\upload\<?=$img ?>">
 							<i id="id_avatar1" onclick="document.getElementById('modal-wrapper').style.display='block'" class="fa fa-camera"></i>
 							<?php  
 								  include("../include/popup_avatar.php");
 							?>	
 							<strong style="font-size: 25px;color: black">
 								<?php 
-									echo $_SESSION['name'];
+									echo $_SESSION['name'][1];
 								?>
 							</strong>
 						</div>		
@@ -127,7 +132,7 @@
 						<strong id="div_top1">Tạo bài viết</strong>
 						<div id="div_group1">
 							<div id="div_trangthai_avt">
-								<img id="div_avata_trangthai" src="..\public\upload\avatar.png">
+								<img id="div_avata_trangthai" src="..\public\upload\<?=$img ?>">
 							</div>
 							<div style="width: 80%!important;" id="div_trangthai_note">
 								<div class="container">
@@ -156,7 +161,7 @@
 					<div class="div_bai_dang">
 						<div class="div_group2">
 							<div id="div_trangthai_avt1">
-								<img id="div_avata_trangthai" src="..\public\upload\avatar.png">
+								<img id="div_avata_trangthai" src="..\public\upload\<?=$img ?>">
 								<strong>Đoàn Tùng</strong>
 							</div>
 							<div>
@@ -179,7 +184,7 @@
 								</div>
 								<div>
 									<div class="div_trangthai_avt2">
-						            	<img style="margin-bottom: 5px;" id="div_avata_trangthai_cmt" src="..\image\avata.jpg">
+						            	<img style="margin-bottom: 5px;" id="div_avata_trangthai_cmt" src="..\public\upload\<?=$img ?>">
 						            	<input class="class_border_radius_5px" type="text" name="txt_Noidung_cmt" size="50" >
 						            	<button style="padding: 2px;margin-bottom: 5px;width: 5em" type="button" class="btn btn-info">Send</button>
 									</div>									

@@ -1,4 +1,8 @@
+<?php session_start();?>
+
 <?php 
+	require_once '../lib/connectdb.php';
+	require '../lib/service.php';
 	if (isset($_POST["submit_avatar"])) {
 		// Kiểm tra phương thức gửi form đi có phải là POST hay ko ?
 		if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -26,13 +30,28 @@
 		            // Kiểm tra xem file đã tồn tại chưa, nếu rồi thì báo lỗi, không thì tiến hành upload
 		            if(file_exists("upload/" . $_FILES["photo"]["name"])){
 		                echo $_FILES["photo"]["name"] . " đã tồn tại";
+		                $email = $_SESSION['name'][0];
+		                $str1 = $_FILES["photo"]["name"];
+		                $conn = db_connect();
+						$query = "UPDATE trangcanhan SET 
+						avatar='".$str1."' WHERE email='".$email."'";
+						db_query($conn, $query);
+						header("location:http:trangcanhan.php");
 		            } else{
 		            	// Hàm move_uploaded_file sẽ tiến hành upload file lên thư mục upload
+		            	$email = $_SESSION['name'][0];
 		                move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $_FILES["photo"]["name"]);
 		                // Thông báo thành công
 		                echo "Upload file thành công";
 		                echo $_FILES["photo"]["name"];
-		                header("location:trangcanhan.php");
+		                echo $email;
+		                $conn = db_connect();
+						$query = "UPDATE trangcanhan SET 
+						avatar='".$_FILES["photo"]["name"]."' WHERE email='".$email."'";
+						db_query($conn, $query);  
+						$str = getImageAvatar();
+						echo "Ten avatar la :".$str ; 
+						header("location:http:trangcanhan.php");     
 		            } 
 		        } else{
 		            echo "Lỗi : Có vấn đề xảy ra khi upload file"; 

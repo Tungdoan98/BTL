@@ -17,7 +17,8 @@
 			$row = db_single($conn, $str);
 			$result = db_query($conn, $query);
 			if(mysqli_fetch_assoc($result)){
-				$_SESSION["name"] = $row["Hoten"];
+				$array = array($row["email"],$row["Hoten"]);
+				$_SESSION["name"] = $array;
 				header("location:http://localhost/cntt3/Travel/public/trangcanhan.php");
 			}
 			else{

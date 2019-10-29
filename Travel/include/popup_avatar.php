@@ -2,7 +2,7 @@
     <form action="upload_avatar.php" method="post" enctype="multipart/form-data" class="modal-content animate">  
         <div class="imgcontainer">
              <span style="color: red;" onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close">&times;</span>
-             <img src="..\public\upload\avatar.png" alt="Avatar" class="avatar">
+             <img src="..\public\upload\avatar.png" alt="Avatar" id="_avatar" class="avatar">
              <h1 style="text-align:center">Avatar</h1>
         </div>
         <div class="container">
@@ -19,4 +19,12 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+$('#fileSelect').on('change', function () {
+    var fileReader = new FileReader();
+    fileReader.onload = function () {
+      var data = fileReader.result;  
+      document.getElementById('_avatar').setAttribute('src',data);
+    };
+    fileReader.readAsDataURL($('#fileSelect').prop('files')[0]);
+});
 </script>
