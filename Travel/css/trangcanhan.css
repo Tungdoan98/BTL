@@ -170,6 +170,7 @@ li a:hover {
 	margin-left:2em;
 }
 #div_trangthai_note{
+	width: 80%!important;
 	float: left;
 	margin: 1em;
 }
@@ -272,6 +273,17 @@ li a:hover {
 	margin-left: 1em;
     margin-bottom: 0.5em;
 }
-.
+#id_avatar1{
+	left: 70px;
+    position: absolute;
+    top: 22px;
+    padding-top: 4em;
+    padding-left: 0px;
+    font-size: 20px;
+    color: #C0C0C0;
+}
+#id_avatar1:hover{
+	color: #585858;
+}
 
 

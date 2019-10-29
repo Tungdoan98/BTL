@@ -3,7 +3,7 @@
 	if(isset($_SESSION['name'])){
 		$str = $_SESSION['name'];
 		$arr = explode(" ",$str );
-		echo($arr[1]);
+		echo($arr[count($arr)-1]);
 		echo "<a href='logout.php?logout'>logout</a>";
 	}
 	else{

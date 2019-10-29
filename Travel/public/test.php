@@ -1,35 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>aaaaaaaa</title>
-  <style type="text/css">
-    {
-      border-width: 1px;
-      border-style: solid;
-      border-bottom-color: black;
-      border-top-color: white;
-      border-left-color: white;
-      border-right-color: white
-    }
-  </style>
-</head>
+<title>Modal Popup Box</title>
+<link rel="stylesheet" type="text/css" href="..\css\popup1.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="..\css\trangcanhan.css">
 <body>
-  <table>
-    <tr>
-      <th>Họ</th>
-      <th>Tên</th>
-    </tr>
-    <tbody>
-      <tr>
-        <td>Đoàn</td>
-        <td>Tùng</td>
-      </tr>
-      <tr>
-        <td>Vũ</td>
-        <td>Thương</td>
-      </tr>
-    </tbody>
-  </table>
-
+<i id="id_avatar1" onclick="document.getElementById('modal-wrapper').style.display='block'" class="fa fa-camera"></i>
+  <?php  
+    include("../include/popup_avatar.php");
+  ?>
 </body>
 </html>

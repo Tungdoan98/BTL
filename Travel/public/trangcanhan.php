@@ -5,10 +5,12 @@
 	<title>Trang cá nhân</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="..\css\menu.css">
+	<link rel="stylesheet" type="text/css" href="..\css\popup1.css">
 	<link rel="stylesheet" type="text/css" href="..\css\trangcanhan.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="..\js\menu.js"></script>
 	
 </head>
@@ -24,9 +26,11 @@
 			<div id="div2">
 				<div id="div_list">
 					<ul>
-						<li><a href="..\public\trangcanhan.html"><img src="..\image\avata.jpg" style="border-radius: 50%;width: 44px;height: 44px;"> 
-							<?php	
-								echo($_SESSION['name']);
+						<li><a href="..\public\trangcanhan.html"><img src="..\public\upload\avatar.png" style="border-radius: 50%;width: 44px;height: 44px;"> 
+							<?php
+								$str = $_SESSION['name'];
+								$arr = explode(" ",$str );
+								echo($arr[count($arr)-1]);
 							?>
 							</a></li>
 						<li><a href="..\public\home.html"><i style="width: 40px;height: 40px;font-size: 30px;margin-top: 5px;" class="fa fa-home"></i></a></li>
@@ -38,7 +42,7 @@
 			<div id="div_dropdown" class="dropdown">
                 <i onclick="myFunction()" id="menu1" class="fa fa-reorder dropbtn"></i> 
 				<div id="myDropdown" class="dropdown-content">
-					<a href="..\public\trangcanhan.html"><img src="..\image\avata.jpg" 
+					<a href="..\public\trangcanhan.html"><img src="..\public\upload\avatar.png" 
 						style="border-radius: 50%;width: 35px;height: 35px;">
 						<strong style="margin-left: 1em">
 							<?php 
@@ -102,7 +106,11 @@
 					</div>
 					<div id="div_anh_dai_dien">
 						<div style="float: left;margin-left: 1em;">
-							<img style="border-radius:50%;border-style: solid;border-color: white;width: 8em;height: 8em;" src="..\image\avata.jpg">
+							<img style="border-radius:50%;border-style: solid;border-color: white;width: 8em;height: 8em;" src="..\public\upload\avatar.png">
+							<i id="id_avatar1" onclick="document.getElementById('modal-wrapper').style.display='block'" class="fa fa-camera"></i>
+							<?php  
+								  include("../include/popup_avatar.php");
+							?>	
 							<strong style="font-size: 25px;color: black">
 								<?php 
 									echo $_SESSION['name'];
@@ -119,9 +127,9 @@
 						<strong id="div_top1">Tạo bài viết</strong>
 						<div id="div_group1">
 							<div id="div_trangthai_avt">
-								<img id="div_avata_trangthai" src="..\image\avata.jpg">
+								<img id="div_avata_trangthai" src="..\public\upload\avatar.png">
 							</div>
-							<div id="div_trangthai_note">
+							<div style="width: 80%!important;" id="div_trangthai_note">
 								<div class="container">
 								    <div class="form-group">
 								         <textarea class="form-control" rows="3" cols="80" placeholder="Bạn đang nghĩ gì ?" id="comment"></textarea>
@@ -132,7 +140,7 @@
 										src="..\image\icon_image2.png">
 										<strong style="margin-top: 10px;">Ảnh</strong>
 								</div>
-								<input style="display: none;" id="button2" type="file" name="aaa">	
+								<input style="display: none;" id="button2" type="file" name="image">	
 								<div class="div_trangthai_upload" 
 									style="width:150px!important ">
 										<img style="width: 25px;height: 25px;" 
@@ -148,7 +156,7 @@
 					<div class="div_bai_dang">
 						<div class="div_group2">
 							<div id="div_trangthai_avt1">
-								<img id="div_avata_trangthai" src="..\image\avata.jpg">
+								<img id="div_avata_trangthai" src="..\public\upload\avatar.png">
 								<strong>Đoàn Tùng</strong>
 							</div>
 							<div>
@@ -182,6 +190,24 @@
 				</div>	
 			</div>
 		</div> 
-	</section>	 
+	</section>
+	<script type="text/javascript">
+	function performClick(elemId) {
+	  	var elem = document.getElementById(elemId);
+	    if(elem && document.createEvent) {
+	    var evt = document.createEvent("MouseEvents");
+	    evt.initEvent("click", true, false);
+	    elem.dispatchEvent(evt);
+   		}
+	}
+	</script>
+	<script>
+		var modal = document.getElementById('modal-wrapper');
+		window.onclick = function(event) {
+		    if (event.target == modal) {
+		        modal.style.display = "none";
+		    }
+		}
+	</script>	 
 </body>
 </html>
