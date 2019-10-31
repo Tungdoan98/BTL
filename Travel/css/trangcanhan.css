@@ -170,7 +170,7 @@ li a:hover {
 	margin-left:2em;
 }
 #div_trangthai_note{
-	width: 80%!important;
+	
 	float: left;
 	margin: 1em;
 }
@@ -284,6 +284,13 @@ li a:hover {
 }
 #id_avatar1:hover{
 	color: #585858;
+}
+.class_bl{
+	border-color: #DDDDDD;
+    border-radius: 4px;
+    width: 25em;
+    border-style: solid;
+    border-width: 1px;
 }
 
 

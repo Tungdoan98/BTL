@@ -5,10 +5,11 @@
     font-size: 15px;
     margin-top: 13px;
     color: #CCCCCC;
-    padding-left: 4px;
+    padding-left: 7px;
 }
 .dropbtn:hover, .dropbtn:focus {
   background-color: #2980B9;
+  border-radius: 4px;
 }
 .dropdown {
   margin-top: 8px;

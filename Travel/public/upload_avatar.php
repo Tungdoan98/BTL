@@ -51,7 +51,8 @@
 						db_query($conn, $query);  
 						$str = getImageAvatar();
 						echo "Ten avatar la :".$str ; 
-						header("location:http:trangcanhan.php");     
+						header("location:http:trangcanhan.php");  
+						db_close($conn);   
 		            } 
 		        } else{
 		            echo "Lỗi : Có vấn đề xảy ra khi upload file"; 

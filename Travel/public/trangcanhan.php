@@ -16,7 +16,9 @@
 </head>
 <body>
 	<?php 
+	require_once '../lib/connectdb.php';
 	require '../lib/service.php';
+	require '../lib/controls.php';
 	$img = getImageAvatar();
 	?>
 	<header>
@@ -86,21 +88,9 @@
 		</div>
 	</header>
 	<section style="padding-top: 4.3em;z-index: 10;">
-		<div id="div5">
-			<h5 style="padding-top: 1em;">Địa điểm du lịch nổi bật</h5>
-			<div class="class_khung_image">
-				<img class="class_image" src="..\image\Sapa.jpg">
-				<strong><em>SaPa</em></strong>
-			</div>
-			<div class="class_khung_image">
-				<img class="class_image" src="..\image\tam_dao.jpg">
-				<strong><em>Tam Đảo</em></strong>
-			</div>
-			<div class="class_khung_image">
-				<img class="class_image" src="..\image\MaiChau.jpg">
-				<strong><em>Mai Châu</em></strong>
-			</div>
-		</div>
+		<?php  
+			include("../include/travel.php");
+		?>
 		<div  id="div_trang_ca_nhan">
 			<div id="div_khung_trang_ca_nhan">
 				<div id="div_top">
@@ -134,63 +124,37 @@
 							<div id="div_trangthai_avt">
 								<img id="div_avata_trangthai" src="..\public\upload\<?=$img ?>">
 							</div>
-							<div style="width: 80%!important;" id="div_trangthai_note">
-								<div class="container">
-								    <div class="form-group">
-								         <textarea class="form-control" rows="3" cols="80" placeholder="Bạn đang nghĩ gì ?" id="comment"></textarea>
-								    </div>
+							<form>
+								<div style="width: 80%!important;" id="div_trangthai_note">
+									<div class="container">
+									    <div class="form-group">
+									         <textarea class="form-control" rows="3" cols="80" placeholder="Bạn đang nghĩ gì ?" id="comment"></textarea>
+									    </div>
+									</div>
+									<?php  
+									  include("../include/loadImage.php");
+									?>	
+									<div class="div_trangthai_upload" 
+										style="width:150px!important ">
+											<img style="width: 25px;height: 25px;" 
+											src="..\image\icon_cam_xuc5.png">
+											<strong style="margin-top: 10px;">Cảm Xúc</strong>
+									</div>
+									<button id="btn_dang"type="button" class="btn btn-primary">
+										Đăng
+									</button>
 								</div>
-								<div id="button1" class="div_trangthai_upload">
-										<img style="width: 30px;height: 25px;" 
-										src="..\image\icon_image2.png">
-										<strong style="margin-top: 10px;">Ảnh</strong>
-								</div>
-								<input style="display: none;" id="button2" type="file" name="image">	
-								<div class="div_trangthai_upload" 
-									style="width:150px!important ">
-										<img style="width: 25px;height: 25px;" 
-										src="..\image\icon_cam_xuc5.png">
-										<strong style="margin-top: 10px;">Cảm Xúc</strong>
-								</div>
-								<button id="btn_dang"type="button" class="btn btn-primary">
-									Đăng
-								</button>
-							</div>			
+							</form>			
 						</div>
 					</div>
 					<div class="div_bai_dang">
-						<div class="div_group2">
-							<div id="div_trangthai_avt1">
-								<img id="div_avata_trangthai" src="..\public\upload\<?=$img ?>">
-								<strong>Đoàn Tùng</strong>
-							</div>
-							<div>
-								<label>Viết gì cho hợp lý bây giờ</label>
-								<img src="..\image\anhtung.jpg" style="width: 100%;max-height: 30em">
-								<div class="div_trangthai_like_cmt_share">
-									<div class="div_item_trang_thai not_like">
-										<i id="item_like"  class="fa fa-thumbs-o-up" style="font-size:20px"></i>
-									</div>	
-									<div class="div_item_trang_thai">
-										<i class="fa fa-comment-o" style="font-size:20px"></i>
-									</div>
-									<div class="div_item_trang_thai">
-										<i class="fa fa-share" style="font-size:20px"></i>
-									</div>							
-								</div>
-								<hr>
-								<div class="div_trangthai_avt2">
-										
-								</div>
-								<div>
-									<div class="div_trangthai_avt2">
-						            	<img style="margin-bottom: 5px;" id="div_avata_trangthai_cmt" src="..\public\upload\<?=$img ?>">
-						            	<input class="class_border_radius_5px" type="text" name="txt_Noidung_cmt" size="50" >
-						            	<button style="padding: 2px;margin-bottom: 5px;width: 5em" type="button" class="btn btn-info">Send</button>
-									</div>									
-								</div>
-							</div>
-						</div>	
+						<?php 
+							$email = $_SESSION['name'][0];
+							$conn = db_connect();
+							$result = getBVList($conn,$email);
+							printBvList($result,$img);
+							db_close($conn);
+						?>	
 					</div>
 				</div>	
 			</div>
