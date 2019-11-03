@@ -1,19 +1,37 @@
-<?php
-	require_once '../lib/connectdb.php';
-	require '../lib/service.php';
-	require '../lib/controls.php';
-	session_start();
-	if(isset($_SESSION['name'])){
-		$str = $_SESSION['name'][1];
-		$arr = explode(" ",$str );
-		echo($arr[count($arr)-1]);
-		echo "<a href='logout.php?logout'>logout</a>";
-		$email = $_SESSION['name'][0];
-		$conn = db_connect();
-		$result = getBVList($conn,$email);
-		printBvList($result);
-	}
-	else{
-		header("location:login.php");
-	}  
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>hello</h2>
+	<table class="table" id="table1">
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>title</th>
+			</tr>
+		</thead>
+		<tbody id="content">
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		$(document).ready(         
+                function() {
+                    $.ajax({
+                        url : "../login/data.php",
+                        type : "Get",
+                        DataType : 'json',
+                        success : function(res) {
+                        	console.log(res);
+                            $( '#content' ).html(res);
+                        },
+                        error : function() {
+                            alert("error occurred");
+                        }
+                    });
+                });
+	</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <?php 
-	function printBV($img,$title,$image) {
+	function printBV($img,$id,$title,$image,$date) {
 		echo("<div class='div_group2'>");
 		echo("<div id='div_trangthai_avt1'>");
 		echo("<img id='div_avata_trangthai' src='..\public\upload\\".$img."'>");
@@ -32,11 +32,11 @@
 		echo("<button style='padding: 2px;margin-bottom: 5px;width: 5em;margin: 3px;' type='button' class='btn btn-info'>Send</button>");
 		echo("</div></div></div></div>");	
 	}
-	function printBvList($data,$img){
-		while($row = mysqli_fetch_assoc($data)) {
-			$title = $row["title"];
-			$image = $row["image"];
-			printBV($img,$title,$image);
-		}
-	}
+	// function printBvList($data,$img){
+	// 	while($row = mysqli_fetch_assoc($data)) {
+	// 		$title = $row["title"];
+	// 		$image = $row["image"];
+	// 		printBV($img,$title,$image);
+	// 	}
+	// }
 ?>

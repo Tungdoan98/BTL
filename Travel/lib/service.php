@@ -8,7 +8,8 @@
 		
 		return $row["avatar"];
 	}
-	function getBVList($conn) {
-	return db_query($conn, "SELECT * FROM baiviet");
+	function getBVList($conn,$email) {
+		$str   = "SELECT * FROM baiviet WHERE email ='".$email."' ";
+	    return db_query($conn, $str);
 	}
 ?>

@@ -147,14 +147,8 @@
 							</form>			
 						</div>
 					</div>
-					<div class="div_bai_dang">
-						<?php 
-							$email = $_SESSION['name'][0];
-							$conn = db_connect();
-							$result = getBVList($conn,$email);
-							printBvList($result,$img);
-							db_close($conn);
-						?>	
+					<div id="content" class="div_bai_dang">
+						
 					</div>
 				</div>	
 			</div>
@@ -177,6 +171,23 @@
 		        modal.style.display = "none";
 		    }
 		}
-	</script>	 
+	</script>	
+	<script type="text/javascript">
+		$(document).ready(         
+                function() {
+                    $.ajax({
+                        url : "../login/data.php",
+                        type : "Get",
+                        DataType : 'json',
+                        success : function(res) {
+                        	console.log(res);
+                            $( '#content' ).html(res);
+                        },
+                        error : function() {
+                            alert("error occurred");
+                        }
+                    });
+                });
+	</script> 
 </body>
 </html>
