@@ -3,7 +3,7 @@
 		src="..\image\icon_image2.png" id="_avatar1">
 	<strong style="margin-top: 10px;">Ảnh</strong>
 </div>
-<input style="display: none;" id="button2" type="file" name="image">
+<input style="display: none;" id="button2" type="file" name="photo1">
 <script>
 $('#button2').on('change', function () {
     var fileReader = new FileReader();

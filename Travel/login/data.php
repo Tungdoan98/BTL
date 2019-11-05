@@ -6,6 +6,7 @@
 	$img = getImageAvatar();
 	$conn = db_connect();
 	$email = $_SESSION['name'][0];
+	$name  = $_SESSION['name'][1];
 	$result = getBVList($conn,$email);
 	while($row = mysqli_fetch_assoc($result)) {
 			$id = $row["id"];
@@ -13,7 +14,7 @@
 			$image = $row["image"];
 			$date = $row["time"];
 			// echo "<tr><td>".$id."</td><td>".$title."</td></tr>";
-			printBV($img,$id,$title,$image,$date);
+			printBV($img,$id,$title,$image,$date,$name);
 		}
 	db_close($conn);
 ?>

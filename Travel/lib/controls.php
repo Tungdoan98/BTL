@@ -1,12 +1,12 @@
 <?php 
-	function printBV($img,$id,$title,$image,$date) {
+	function printBV($img,$id,$title,$image,$date,$name) {
 		echo("<div class='div_group2'>");
 		echo("<div id='div_trangthai_avt1'>");
 		echo("<img id='div_avata_trangthai' src='..\public\upload\\".$img."'>");
-		echo("<strong>Đoàn Tùng</strong>");
+		echo("<strong>".$name."</strong>");
 		echo("</div>");
 		echo("<div>");
-		echo("<label>".$title."</label>");
+		echo("<label style='margin:5px;' >".$title."</label>");
 		if($image !=""){
 			echo("<img src='..\public\upload\\".$image."'style='width: 98%;margin-left: 1%;'>");
 		}

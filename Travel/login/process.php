@@ -19,7 +19,7 @@
 			if(mysqli_fetch_assoc($result)){
 				$array = array($row["email"],$row["Hoten"]);
 				$_SESSION["name"] = $array;
-				header("location:http://localhost/cntt3/Travel/public/trangcanhan.php");
+				header("location:http://localhost:81/cntt3/Travel/public/trangcanhan.php");
 			}
 			else{
 				header("location:login.php?Invalid= Please Enter Correct Email and Password");

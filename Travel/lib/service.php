@@ -9,7 +9,7 @@
 		return $row["avatar"];
 	}
 	function getBVList($conn,$email) {
-		$str   = "SELECT * FROM baiviet WHERE email ='".$email."' ";
+		$str   = "SELECT * FROM baiviet WHERE email ='".$email."' ORDER BY id DESC ";
 	    return db_query($conn, $str);
 	}
 ?>
