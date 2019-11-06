@@ -4,6 +4,13 @@
 		echo("<div id='div_trangthai_avt1'>");
 		echo("<img id='div_avata_trangthai' src='..\public\upload\\".$img."'>");
 		echo("<strong>".$name."</strong>");
+		echo ("<div class='dropdown1' style='float:right;''>
+				<button class='dropbtn1'><i class='fa fa-gear' style='font-size:15px;'></i></button>
+				<div class='dropdown-content1'>
+				<button id='btn_delete_edit' onclick='functiondelete(".$id.")' class='btn'>Delete</button>
+				<button id='btn_delete_edit' class='btn'><a style='padding: 0;text-decoration: none;' href='http://localhost:81/cntt3/Travel/public/edit.php'>Edit</a></button>
+				</div>
+				</div>");
 		echo("</div>");
 		echo("<div>");
 		echo("<label style='margin:5px;' >".$title."</label>");

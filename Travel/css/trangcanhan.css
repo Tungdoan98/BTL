@@ -288,5 +288,55 @@ li a:hover {
 .class_bl{
 	
 }
+.dropbtn1 {
+	border-radius: 4px;
+	background-color: #EEEEEE;
+    color: white;
+    padding: 0px 4px 0 4px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  
+}
+
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content1 {
+	border-radius: 4px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #f1f1f1;}
+
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+
+.dropdown1:hover .dropbtn1 {
+  background-color: #10707f;
+}
+#btn_delete_edit{
+	text-align: center;padding: 0;width: 150px;margin: 5px;
+}
+
+
+
 
 
