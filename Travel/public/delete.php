@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php 
 	require_once '../lib/connectdb.php';
 	$id = $_POST['del_id'];

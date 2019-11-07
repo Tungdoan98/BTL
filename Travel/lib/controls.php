@@ -8,7 +8,7 @@
 				<button class='dropbtn1'><i class='fa fa-gear' style='font-size:15px;'></i></button>
 				<div class='dropdown-content1'>
 				<button id='btn_delete_edit' onclick='functiondelete(".$id.")' class='btn'>Delete</button>
-				<button id='btn_delete_edit' class='btn'><a style='padding: 0;text-decoration: none;' href='http://localhost:81/cntt3/Travel/public/edit.php'>Edit</a></button>
+				<button id='btn_delete_edit' class='btn'><a style='padding: 0;text-decoration: none;' href='http://localhost:81/cntt3/Travel/public/edit.php?id= ".$id."'>Edit</a></button>
 				</div>
 				</div>");
 		echo("</div>");
