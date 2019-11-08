@@ -70,6 +70,7 @@ li {
 }
 
 li a {
+	border-radius: 4px;
     display: block;
     color: white;
     text-align: center;
@@ -81,7 +82,7 @@ li a {
 
 li a:hover {
 	text-decoration: none;
-    background-color: #E9EBEE;
+    background-color: #bec6d26b;
 }
 #div3{
 	position: fixed;
@@ -183,7 +184,116 @@ li a:hover {
 #btn_dang{
 	margin-left: 0.8em;
 	padding: 0;
-    width: 16em;
+    width: 15.8em;
+}
+.div_bai_dang{
+	margin-top:16em; 
+	box-sizing: border-box;
+	border-width: 1px;
+	border-radius: 5px;
+	width: 90%;
+	min-width: 715px;
+	min-height: 13em;
+	margin-top: 1%;
+	margin-left: 5%; 
+	border-style:solid;
+	border-color: #DDDDDD; 
+	background-color: #FFFFFF;
+
+}
+
+.div_group2{
+	box-sizing: border-box;
+	border-color: #DDDDDD;
+	border-width: 1px;
+	border-style: solid;
+	margin-left:15%;
+	margin-top:2%;
+	margin-bottom:2%;
+	width: 70%;
+
+}
+.div_trangthai_like_cmt_share{
+	
+   	width: 90%;
+   	background-color:white;
+   	margin-top: 2%;
+   	margin-bottom: 2%;
+   	margin-left: 10%;
+
+}
+.div_item_trang_thai{
+	display: inline-block;
+	border-radius: 10px;
+	padding: 0.5%;
+	text-align: center;
+	background-color: #EEEEE0;
+	width: 25%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+.div_item_trang_thai:hover{
+	background-color: #DDDDDD;
+}
+.Noidung_cmt{
+	border-radius: 20px;
+	border-style: solid;
+	border-width: 1px;
+}
+#div_avata_trangthai_cmt{
+	border-radius:50%;
+	border-style: solid;
+	border-color: white;
+	width: 2em;
+	height: 2em;
+}
+.div_trangthai_avt2{
+	margin-left: 1em;
+    margin-bottom: 0.5em;
+}
+.dropbtn1 {
+	border-radius: 4px;
+	background-color: #EEEEEE;
+    color: white;
+    padding: 0px 4px 0 4px;
+    margin: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  
+}
+
+.dropdown1 {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content1 {
+	border-radius: 4px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content1 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content1 a:hover {background-color: #f1f1f1;}
+
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+
+.dropdown1:hover .dropbtn1 {
+  background-color: #10707f;
 }
 
 

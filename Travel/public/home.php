@@ -1,61 +1,26 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Trang chủ</title>
 	<link rel="stylesheet" type="text/css" href="..\css\home.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="..\css\menu.css">
+	<link rel="stylesheet" type="text/css" href="..\css\popup1.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script type="text/javascript" src="..\js\menu.js"></script>
 	
 </head>
 <body>
-	<header>
-		<div id="div_header">
-			<div id="div1">
-				<div id="div_search">
-					<input style="border-radius: 5px;border-style: solid; border-color: #808080;" type="text" name="search" size="40">
-					<button id="btn_search" class="btn btn-warning" type="button"> <i style="font-size: 20px;" class="fa fa-search"></i> </button>
-					</div>	
-			</div>
-			<div id="div2">
-				<div id="div_list">
-					<ul>
-						<li><a href="..\public\trangcanhan.html"><img src="..\image\avata.jpg" style="border-radius: 50%;width: 44px;height: 44px;"> Tùng</a></li>
-						<li><a href="..\public\home.html"><i style="width: 40px;height: 40px;font-size: 30px;margin-top: 5px;" class="fa fa-home"></i></a></li>
-						<li><a href="#news"><i style="width: 40px;height: 40px;font-size: 28px;margin-top: 5px;" class="fa fa-envelope"></i></a></li>
-						<li><a href="#news"><i style="width: 40px;height: 40px;font-size: 28px;margin-top: 5px;" class="fa fa-bell"></i></a></li>
-					</ul>		
-				</div>
-			</div>
-			<div id="div_dropdown" class="dropdown">
-                <i onclick="myFunction()" id="menu1" class="fa fa-reorder dropbtn"></i> 
-				<div id="myDropdown" class="dropdown-content">
-					<a href="..\public\trangcanhan.html"><img src="..\image\avata.jpg" 
-						style="border-radius: 50%;width: 35px;height: 35px;">
-						<strong style="margin-left: 1em">Đoàn Tùng</strong>
-					</a>
-					<a href="#contact">
-						<img style="width: 25px;height: 25px;" src="..\image\icon_facebook.png">
-						<label style="margin-left: 1em">Facebook</label>
-					</a>
-					<a href="#contact">
-						<img style="width: 25px;height: 25px;" src="..\image\icon_google.png">
-						<label style="margin-left: 1em">Google</label>
-					</a>
-					<a href="#contact">
-						<img style="width: 25px;height: 25px;" src="..\image\Instagram_icon.png">
-						<label style="margin-left: 1em">Instagram</label>
-					</a>
-					<a href="#contact">
-						<i class="fa fa-gear" style="font-size:25px;"></i>
-						<label style="margin-left: 1.3em">Cài đặt</label>
-					</a>
-				</div>
-			</div>		
-		</div>
-	</header>
+	<?php 
+	require_once '../lib/connectdb.php';
+	require '../lib/service.php';
+	require '../lib/controls.php';
+	$img = getImageAvatar();
+	include("../include/header.php");
+	?>
 	<section style="padding-top: 4.3em;">
 		<div id="div5">
 			<h5 style="padding-top: 1em;">Địa điểm du lịch nổi bật</h5>
@@ -78,10 +43,10 @@
 					<strong>Tạo bài viết</strong>
 			    </div>
 				<div id="div_trangthai_avt">
-					<img id="div_avata_trangthai" src="..\image\avata.jpg">
+					<img id="div_avata_trangthai" src="..\public\upload\<?=$img ?>">
 				</div>
 				<div id="div_trangthai_note">
-					<div class="container">
+					<div style="max-width: 35em;" class="container">
 						<div class="form-group">
 							<textarea class="form-control" rows="3" cols="70" placeholder="Bạn đang nghĩ gì ?" id="comment"></textarea>
 					 	</div>
@@ -103,6 +68,9 @@
 					</button>	
 				</div>
 			</div>	
+			<div style="margin-top:16em;width: 80%; " id="content" class="div_bai_dang">
+					
+			</div>
 		</div>
 		<div id="div3">
 			<img style="width: 200px ;height: 100px;padding: 5%;margin-left: 12%;" src="..\image\logo.png">
@@ -116,4 +84,23 @@
 		</div>	    
 	</section>	
 </body>
+<script type="text/javascript">
+	$(document).ready(         
+		function() {
+			$.ajax({
+				url : "../login/data1.php",
+				type : "Get",
+				DataType : 'json',
+				success : function(res) {
+					console.log(res);
+					$( '#content' ).html(res);
+				},
+				error : function() {
+					alert("error occurred");
+				}
+			}
+			);
+		});
+	
+	</script> 
 </html>

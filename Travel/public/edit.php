@@ -30,7 +30,10 @@
 				<form action="edit.php" method="POST">
 					<div>
 						<textarea name="comment" class="form-control" rows="1" cols="80" placeholder="Bạn đang nghĩ gì ?" id="comment"><?php echo($title)?></textarea>
-						<img src="..\public\upload\<?=$imgBv ?>" style="width: 98%;margin-left: 1%;">
+						<?php
+							if($imgBv !='')
+								echo ("<img src='..\public\upload\\".$imgBv."' style='width: 98%;margin-left: 1%;'>");
+						?>
 						<div class="div_trangthai_like_cmt_share">
 							<div style="color: red" class="div_item_trang_thai not_like">
 								<a style="text-decoration: none;" href="http://localhost:81/cntt3/Travel/public/trangcanhan.php">Close</a>
