@@ -99,3 +99,19 @@ function functiondelete(id){
 		}
 	});
 }
+$(document).ready(         
+	function() {
+		$.ajax({
+			url : "../login/data1.php",
+			type : "Get",
+			DataType : 'json',
+			success : function(res) {
+				console.log(res);
+				$( '#content' ).html(res);
+			},
+			error : function() {
+				alert("error occurred");
+			}
+		}
+		);
+	});
