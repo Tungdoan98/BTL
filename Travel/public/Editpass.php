@@ -61,7 +61,7 @@
 					</tr>
 					<tr>
 						<td></td>
-						<td><button onclick="functionpass()" style="padding: 2px;width: 100px; margin-bottom: 5px;" type="button" class="btn btn-primary">Thay đổi Tên</button></td>
+						<td><button onclick="functionName()" style="padding: 2px;width: 100px; margin-bottom: 5px;" type="button" class="btn btn-primary">Thay đổi Tên</button></td>
 					</tr>
 				</table>			
 			</div>
@@ -98,6 +98,32 @@
 	    	else{
 	    		alert("Mật khẩu mới không khớp");
 	    	}
+    	}
+    	else{
+    		alert("Nhập đầy đủ thông tin mật khẩu !");
+    	}	
+    }
+    function functionName(){
+    	var txtHo  = $('#txtHo').val();
+    	var txtTen  = $('#txtTen').val();
+    	if(txtHo != '' && txtTen != ''){
+    		$.ajax({
+	    		type:'POST',
+	    		url:'EditName.php',
+	    		data:{
+	    			txtHo: txtHo,
+	    			txtTen: txtTen
+	    		},
+	    		success: function (res) {   
+	    			if (res == '1') {
+	    				alert("Đổi Tên Thành Công !");
+	    			    window.location="http://localhost:81/cntt3/Travel/public/trangcanhan.php";
+	    			}
+	    			else{
+	    				alert(res);
+	    			}
+	    			}
+		    	});
     	}
     	else{
     		alert("Nhập đầy đủ thông tin mật khẩu !");

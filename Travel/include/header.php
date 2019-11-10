@@ -11,8 +11,7 @@
 					<ul>
 						<li><a href="http://localhost:81/cntt3/Travel/public/trangcanhan.php"><img src="..\public\upload\<?=$img ?>" style="border-radius: 50%;width: 44px;height: 44px;"> 
 							<?php
-							$str = $_SESSION['name'][1];
-							$arr = explode(" ",$str );
+							$arr = explode(" ",$Hoten );
 							echo($arr[count($arr)-1]);
 							?>
 						</a></li>

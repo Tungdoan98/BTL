@@ -29,4 +29,10 @@
 		$row = db_single($conn, $str);
 		return $row["title"];
 	}
+	function getName($email){
+		$conn = db_connect();
+		$str = "SELECT * FROM dangky WHERE email ='".$email."' ";
+		$row = db_single($conn, $str);
+		return $row["Hoten"];
+	}
 ?>

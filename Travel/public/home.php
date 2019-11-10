@@ -3,14 +3,15 @@
 <html>
 <head>
 	<title>Trang chủ</title>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="..\css\home.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="..\css\menu.css">
 	<link rel="stylesheet" type="text/css" href="..\css\popup1.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<script type="text/javascript" src="..\js\menu.js"></script>
+	<script type="text/javascript" src="..\js\ajax.js"></script>
 	
 </head>
 <body>
@@ -19,6 +20,8 @@
 	require '../lib/service.php';
 	require '../lib/controls.php';
 	$img = getImageAvatar();
+	$email = $_SESSION['name'][0];
+	$Hoten = getName($email);
 	include("../include/header.php");
 	?>
 	<section style="padding-top: 4.3em;">
@@ -84,23 +87,4 @@
 		</div>	    
 	</section>	
 </body>
-<script type="text/javascript">
-	$(document).ready(         
-		function() {
-			$.ajax({
-				url : "../login/data1.php",
-				type : "Get",
-				DataType : 'json',
-				success : function(res) {
-					console.log(res);
-					$( '#content' ).html(res);
-				},
-				error : function() {
-					alert("error occurred");
-				}
-			}
-			);
-		});
-	
-	</script> 
 </html>
